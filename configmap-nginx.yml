@@ -3,13 +3,13 @@ kind: ConfigMap
 metadata:
   name: nginx-config-map
 data:
- reverse_proxy.conf: |
+  reverse_proxy.conf: |
     server {
-        listen 80;
+        listen 8080;
         server_name netflix.mahe.my.id;
 
         location / {
-            proxy_pass http://netflix-app;
+            proxy_pass http://34.101.230.99;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
